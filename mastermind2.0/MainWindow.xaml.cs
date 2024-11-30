@@ -57,17 +57,10 @@ namespace mastermind2._0
 
             kiesrandomkleur();
 
-           
-
             this.Title = $"poging {attempts}";
-
-           
 
             countdowntime = startedGuestime;
             countdown.Text = $"{countdowntime.Second.ToString()}";
-
-           
-
         }
 
         private void kiesrandomkleur()
