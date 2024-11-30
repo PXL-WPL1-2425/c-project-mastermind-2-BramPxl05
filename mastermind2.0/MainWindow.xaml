@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mastermind2._0"
         mc:Ignorable="d"
-        Title="mastermind" Height="600" Width="1000" KeyDown="Window_KeyDown">
+        Title="mastermind" Height="600" Width="1000" KeyDown="Window_KeyDown" Background="Black">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,11 +19,11 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Name="CheckCodeButton" Content="check code" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Grid.Column="1" Height="42" FontSize="20" Margin="0,102,0,0" Click="CheckCodeButton_Click"/>
-        <Label BorderBrush="Black" BorderThickness="15" Grid.Row="0" Name="kleurvlak1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="0" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <Label BorderBrush="Black" BorderThickness="15" Grid.Row="0" Name="kleurvlak4" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="3" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <Label BorderBrush="Black" BorderThickness="15" Grid.Row="0" Name="kleurvlak3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="2" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <Label BorderBrush="Black" BorderThickness="15" Grid.Row="0" Name="kleurvlak2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Button Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" Name="CheckCodeButton" Content="check code" HorizontalAlignment="Left" VerticalAlignment="Center" Width="500" Height="42" FontSize="20" Margin="0,0,0,0" Click="CheckCodeButton_Click"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="0" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak4" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="3" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="2" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
         <WrapPanel Grid.Row="1" Grid.Column="0">
             <Button Name="ButtonKleurRood1" Background="Red" Width="123" Height="50" Click="ButtonKleurRood1_Click"></Button>
             <Button Name="ButtonKleurGeel1" Background="Yellow" Width="123" Height="50" Click="ButtonKleurGeel1_Click"></Button>
@@ -64,7 +64,8 @@
         <Label Name="labelnumber2" Grid.Column="1" Grid.Row="2" Visibility="Hidden">0</Label>
         <Label Name="labelnumber3" Grid.Column="2" Grid.Row="2" Visibility="Hidden">0</Label>
         <Label Name="labelnumber4" Grid.Column="3" Grid.Row="2" Visibility="Hidden">0</Label>
-        <TextBox Name="toggledebug" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" KeyDown="Window_KeyDown">code</TextBox>
-        <TextBox Name="countdown" Grid.Row="2" Background="Transparent" FontSize="20">00:00</TextBox>
+        <TextBox Name="toggledebug" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="Red" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" KeyDown="Window_KeyDown">code</TextBox>
+        <TextBox Name="countdown" Grid.Row="2" Background="Transparent" FontSize="20" Foreground="White">00:00</TextBox>
+        <Label Name="scorelable" Grid.Row="2" Grid.Column="3" FontSize="20" Background="Transparent" Foreground="White">je score is 100/100</Label>
     </Grid>
 </Window>

@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace mastermind2._0
 {
@@ -22,7 +23,12 @@ namespace mastermind2._0
         int attempts = 1;
         DateTime startedGuestime = DateTime.Now;
         DateTime countdowntime = DateTime.Now;
-
+        int score = 100;
+        int gues1corect = 0;
+        int gues2corect = 0;
+        int gues3corect = 0;
+        int gues4corect = 0;
+        int winner = 0;
         public MainWindow()
         {
             timer = new DispatcherTimer();
@@ -195,7 +201,7 @@ namespace mastermind2._0
             switch (selectedIndex)
             {
                 case 1:
-                    return Brushes.Red; 
+                    return Brushes.Red;
                 case 2:
                     return Brushes.Yellow;
                 case 3:
@@ -368,109 +374,153 @@ namespace mastermind2._0
 
             if (mijnkleur1 == randomkleurkeuze1)
             {
-                kleurvlak1.BorderBrush = Brushes.Green;
+                kleurvlak1.BorderBrush = Brushes.Red;
+                gues1corect = 1;
             }
             else if (mijnkleur1 == randomkleurkeuze2)
             {
-                kleurvlak1.BorderBrush = Brushes.Orange;
+                kleurvlak1.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur1 == randomkleurkeuze3)
             {
-                kleurvlak1.BorderBrush = Brushes.Orange;
+                kleurvlak1.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur1 == randomkleurkeuze4)
             {
-                kleurvlak1.BorderBrush = Brushes.Orange;
+                kleurvlak1.BorderBrush = Brushes.Beige;
+                score--;
             }
             else
             {
-                kleurvlak1.BorderBrush = Brushes.Red;
+                score = score - 2;
             }
+           
 
 
 
             if (mijnkleur2 == randomkleurkeuze2)
             {
-                kleurvlak2.BorderBrush = Brushes.Green;
+                kleurvlak2.BorderBrush = Brushes.Red;
+                gues2corect = 1;
             }
             else if (mijnkleur2 == randomkleurkeuze1)
             {
-                kleurvlak2.BorderBrush = Brushes.Orange;
+                kleurvlak2.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur2 == randomkleurkeuze3)
             {
-                kleurvlak2.BorderBrush = Brushes.Orange;
+                kleurvlak2.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur2 == randomkleurkeuze4)
             {
-                kleurvlak2.BorderBrush = Brushes.Orange;
+                kleurvlak2.BorderBrush = Brushes.Beige;
+                score--;
             }
             else
             {
-                kleurvlak2.BorderBrush = Brushes.Red;
+                score = score - 2;
             }
+
 
 
 
             if (mijnkleur3 == randomkleurkeuze3)
             {
-                kleurvlak3.BorderBrush = Brushes.Green;
+                kleurvlak3.BorderBrush = Brushes.Red;
+                gues3corect = 1;
             }
             else if (mijnkleur3 == randomkleurkeuze2)
             {
-                kleurvlak3.BorderBrush = Brushes.Orange;
+                kleurvlak3.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur3 == randomkleurkeuze3)
             {
-                kleurvlak3.BorderBrush = Brushes.Orange;
+                kleurvlak3.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur3 == randomkleurkeuze4)
             {
-                kleurvlak3.BorderBrush = Brushes.Orange;
+                kleurvlak3.BorderBrush = Brushes.Beige;
+                score--;
             }
             else
             {
-                kleurvlak3.BorderBrush = Brushes.Red;
+                score = score - 2;
             }
 
 
 
             if (mijnkleur4 == randomkleurkeuze4)
             {
-                kleurvlak4.BorderBrush = Brushes.Green;
+                kleurvlak4.BorderBrush = Brushes.Red;
+                gues4corect = 1;
             }
             else if (mijnkleur4 == randomkleurkeuze2)
             {
-                kleurvlak4.BorderBrush = Brushes.Orange;
+                kleurvlak4.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur4 == randomkleurkeuze3)
             {
-                kleurvlak4.BorderBrush = Brushes.Orange;
+                kleurvlak4.BorderBrush = Brushes.Beige;
+                score--;
             }
             else if (mijnkleur4 == randomkleurkeuze1)
             {
-                kleurvlak4.BorderBrush = Brushes.Orange;
+                kleurvlak4.BorderBrush = Brushes.Beige;
+                score--;
             }
             else
             {
-                kleurvlak4.BorderBrush = Brushes.Red;
+                score = score - 2;
             }
+
 
             attempts++;
             this.Title = $"poging {attempts}";
 
             if (attempts > 10)
             {
-                MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nnog eens proberen?");
-            }
+                MessageBoxResult result = MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nnog eens proberen?\nscore: {score}/100", "LOSER", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    Process.Start(Application.ResourceAssembly.Location);
 
-            startedGuestime = DateTime.Now;
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
             
 
+            
+           
 
+            startedGuestime = DateTime.Now;
 
+            scorelable.Content = ($"je score is {score}/100");
 
+            winner = gues1corect + gues2corect + gues3corect + gues4corect;
 
+            if(winner == 4)
+            {
+                MessageBoxResult result = MessageBox.Show($"code is gekraakt in {attempts} poggingen. wil je nog eens?", "WINNER", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    Process.Start(Application.ResourceAssembly.Location);                   
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
+           
 
 
 
