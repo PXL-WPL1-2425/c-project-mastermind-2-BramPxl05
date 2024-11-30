@@ -11,12 +11,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Diagnostics;
+using System.ComponentModel;
 
 namespace mastermind2._0
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+   
     public partial class MainWindow : Window
     {
         private DispatcherTimer timer = new DispatcherTimer();
@@ -29,6 +33,17 @@ namespace mastermind2._0
         int gues3corect = 0;
         int gues4corect = 0;
         int winner = 0;
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            MessageBoxResult result = MessageBox.Show("wilt u het spel vroegtijdig beëindigen?", "OPGEPAST", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
         public MainWindow()
         {
             timer = new DispatcherTimer();
@@ -40,6 +55,23 @@ namespace mastermind2._0
             InitializeComponent();
             InitializeComponent();
 
+            kiesrandomkleur();
+
+           
+
+            this.Title = $"poging {attempts}";
+
+           
+
+            countdowntime = startedGuestime;
+            countdown.Text = $"{countdowntime.Second.ToString()}";
+
+           
+
+        }
+
+        private void kiesrandomkleur()
+        {
             Random rnd = new Random();
             int kleur1 = rnd.Next(1, 7);
             int kleur2 = rnd.Next(1, 7);
@@ -172,15 +204,7 @@ namespace mastermind2._0
             randomkleur3.Content = kleurtext3;
             randomkleur4.Content = kleurtext4;
 
-            this.Title = $"poging {attempts}";
-
             toggledebug.Text = ($"{kleurtext1}, {kleurtext2}, {kleurtext3}, {kleurtext4}");
-
-            countdowntime = startedGuestime;
-            countdown.Text = $"{countdowntime.Second.ToString()}";
-
-
-
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
@@ -372,6 +396,8 @@ namespace mastermind2._0
             string randomkleurkeuze3 = randomkleur3.ToString();
             string randomkleurkeuze4 = randomkleur4.ToString();
 
+            winner = 0;
+
             if (mijnkleur1 == randomkleurkeuze1)
             {
                 kleurvlak1.BorderBrush = Brushes.Red;
@@ -486,11 +512,29 @@ namespace mastermind2._0
 
             if (attempts > 10)
             {
+                attempts--;
                 MessageBoxResult result = MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nnog eens proberen?\nscore: {score}/100", "LOSER", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    Process.Start(Application.ResourceAssembly.Location);
-
+                    score = 100;
+                    attempts = 0;
+                    kleurvlak1.BorderBrush = Brushes.Transparent;
+                    kleurvlak2.BorderBrush = Brushes.Transparent;
+                    kleurvlak3.BorderBrush = Brushes.Transparent;
+                    kleurvlak4.BorderBrush = Brushes.Transparent;
+                    kleurvlak1.Background = Brushes.Transparent;
+                    kleurvlak2.Background = Brushes.Transparent;
+                    kleurvlak3.Background = Brushes.Transparent;
+                    kleurvlak4.Background = Brushes.Transparent;
+                    kleurvlak1.Content = "";
+                    kleurvlak2.Content = "";
+                    kleurvlak3.Content = "";
+                    kleurvlak4.Content = "";
+                    kiesrandomkleur();
+                    gues1corect = 0;
+                    gues2corect = 0;
+                    gues3corect = 0;
+                    gues4corect = 0;
                 }
                 else if (result == MessageBoxResult.No)
                 {
@@ -510,10 +554,29 @@ namespace mastermind2._0
 
             if(winner == 4)
             {
+                attempts--;
                 MessageBoxResult result = MessageBox.Show($"code is gekraakt in {attempts} poggingen. wil je nog eens?", "WINNER", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    Process.Start(Application.ResourceAssembly.Location);                   
+                    score = 100;
+                    attempts = 0;
+                    kleurvlak1.BorderBrush = Brushes.Transparent;
+                    kleurvlak2.BorderBrush = Brushes.Transparent;
+                    kleurvlak3.BorderBrush = Brushes.Transparent;
+                    kleurvlak4.BorderBrush = Brushes.Transparent;
+                    kleurvlak1.Background = Brushes.Transparent;
+                    kleurvlak2.Background = Brushes.Transparent;
+                    kleurvlak3.Background = Brushes.Transparent;
+                    kleurvlak4.Background = Brushes.Transparent;
+                    kleurvlak1.Content = "";
+                    kleurvlak2.Content = "";
+                    kleurvlak3.Content = "";
+                    kleurvlak4.Content = "";
+                    kiesrandomkleur();
+                    gues1corect = 0;
+                    gues2corect = 0;
+                    gues3corect = 0;
+                    gues4corect = 0;
                 }
                 else if (result == MessageBoxResult.No)
                 {

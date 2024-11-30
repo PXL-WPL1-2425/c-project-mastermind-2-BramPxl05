@@ -5,67 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mastermind2._0"
         mc:Ignorable="d"
-        Title="mastermind" Height="600" Width="1000" KeyDown="Window_KeyDown" Background="Black">
+        Title="mastermind" Height="600" Width="1000" KeyDown="Window_KeyDown" Background="Black" Name="hoofdscherm">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="250*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="50.954"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="123*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" Name="CheckCodeButton" Content="check code" HorizontalAlignment="Left" VerticalAlignment="Center" Width="500" Height="42" FontSize="20" Margin="0,0,0,0" Click="CheckCodeButton_Click"/>
-        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="0" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak4" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="3" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="2" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <Label BorderBrush="Transparent" BorderThickness="15" Grid.Row="0" Name="kleurvlak2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
-        <WrapPanel Grid.Row="1" Grid.Column="0">
-            <Button Name="ButtonKleurRood1" Background="Red" Width="123" Height="50" Click="ButtonKleurRood1_Click"></Button>
-            <Button Name="ButtonKleurGeel1" Background="Yellow" Width="123" Height="50" Click="ButtonKleurGeel1_Click"></Button>
-            <Button Name="ButtonKleurOranje1" Background="Orange" Width="123" Height="50" Click="ButtonKleurOranje1_Click"></Button>
-            <Button Name="ButtonKleurWit1" Background="Beige" Width="123" Height="50" Click="ButtonKleurWit1_Click"></Button>
-            <Button Name="ButtonKleurGroen1" Background="Green" Width="123" Height="50" Click="ButtonKleurGroen1_Click"></Button>
-            <Button Name="ButtonKleurBlauw1" Background="Blue" Width="123" Height="50" Click="ButtonKleurBlauw1_Click"></Button>
-        </WrapPanel>
-        <WrapPanel Grid.Row="1" Grid.Column="1">
-            <Button Name="ButtonKleurRood2" Background="Red" Width="123" Height="50" Click="ButtonKleurRood2_Click"></Button>
-            <Button Name="ButtonKleurgeel2" Background="Yellow" Width="123" Height="50" Click="ButtonKleurgeel2_Click"></Button>
-            <Button Name="ButtonKleurOranje2" Background="Orange" Width="123" Height="50" Click="ButtonKleurOranje2_Click"></Button>
-            <Button Name="ButtonKleurWit2" Background="Beige" Width="123" Height="50" Click="ButtonKleurWit2_Click"></Button>
-            <Button Name="ButtonKleurGroen2" Background="Green" Width="123" Height="50" Click="ButtonKleurGroen2_Click"></Button>
-            <Button Name="ButtonKleurBlauw2" Background="Blue" Width="123" Height="50" Click="ButtonKleurBlauw2_Click"></Button>
-        </WrapPanel>
-        <WrapPanel Grid.Row="1" Grid.Column="2">
-            <Button Name="ButtonKleurRood3" Background="Red" Width="123" Height="50" Click="ButtonKleurRood3_Click"></Button>
-            <Button Name="ButtonKleurGeel3" Background="Yellow" Width="123" Height="50" Click="ButtonKleurGeel3_Click"></Button>
-            <Button Name="ButtonKleurOranje3" Background="Orange" Width="123" Height="50" Click="ButtonKleurOranje3_Click"></Button>
-            <Button Name="ButtonKleurWit3" Background="Beige" Width="123" Height="50" Click="ButtonKleurWit3_Click"></Button>
-            <Button Name="ButtonKleurGroen3" Background="Green" Width="123" Height="50" Click="ButtonKleurGroen3_Click"></Button>
-            <Button Name="ButtonKleurBlauw3" Background="Blue" Width="123" Height="50" Click="ButtonKleurBlauw3_Click"></Button>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="3" Name="CheckCodeButton" Content="check code" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="42" FontSize="20" Click="CheckCodeButton_Click"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Name="kleurvlak1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="250" Grid.Column="0" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" Grid.ColumnSpan="3"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Name="kleurvlak4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="250" Grid.Column="5" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Name="kleurvlak3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="250" Grid.Column="4" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <Label BorderBrush="Transparent" BorderThickness="15" Name="kleurvlak2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="250" Grid.Column="3" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
+        <WrapPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <Button Name="ButtonKleurRood1" Background="Red" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurRood1_Click"></Button>
+            <Button Name="ButtonKleurGeel1" Background="Yellow" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurGeel1_Click"></Button>
+            <Button Name="ButtonKleurOranje1" Background="Orange" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurOranje1_Click"></Button>
+            <Button Name="ButtonKleurWit1" Background="Beige" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurWit1_Click"></Button>
+            <Button Name="ButtonKleurGroen1" Background="Green" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurGroen1_Click"></Button>
+            <Button Name="ButtonKleurBlauw1" Background="Blue" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurBlauw1_Click"></Button>
         </WrapPanel>
         <WrapPanel Grid.Row="1" Grid.Column="3">
-            <Button Name="ButtonKleurRood4" Background="Red" Width="123" Height="50" Click="ButtonKleurRood4_Click"></Button>
-            <Button Name="ButtonKleurGeel4" Background="Yellow" Width="123" Height="50" Click="ButtonKleurGeel4_Click"></Button>
-            <Button Name="ButtonKleurOranje4" Background="Orange" Width="123" Height="50" Click="ButtonKleurOranje4_Click"></Button>
-            <Button Name="ButtonKleurWit4" Background="Beige" Width="123" Height="50" Click="ButtonKleurWit4_Click"></Button>
-            <Button Name="ButtonKleurGroen4" Background="Green" Width="123" Height="50" Click="ButtonKleurGroen4_Click"></Button>
-            <Button Name="ButtonKleurBlauw4" Background="Blue" Width="123" Height="50" Click="ButtonKleurBlauw4_Click"></Button>
+            <Button Name="ButtonKleurRood2" Background="Red" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurRood2_Click"></Button>
+            <Button Name="ButtonKleurgeel2" Background="Yellow" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurgeel2_Click"></Button>
+            <Button Name="ButtonKleurOranje2" Background="Orange" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurOranje2_Click"></Button>
+            <Button Name="ButtonKleurWit2" Background="Beige" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurWit2_Click"></Button>
+            <Button Name="ButtonKleurGroen2" Background="Green" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurGroen2_Click"></Button>
+            <Button Name="ButtonKleurBlauw2" Background="Blue" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurBlauw2_Click"></Button>
         </WrapPanel>
-        <Label Name="randomkleur1" Grid.Column="0" Grid.Row="2" Visibility="Hidden">randomkleur1</Label>
-        <Label Name="randomkleur2" Grid.Column="1" Grid.Row="2" Visibility="Hidden">randomkleur2</Label>
-        <Label Name="randomkleur3" Grid.Column="2" Grid.Row="2" Visibility="Hidden">randomkleur3</Label>
-        <Label Name="randomkleur4" Grid.Column="3" Grid.Row="2" Visibility="Hidden">randomkleur4</Label>
-        <Label Name="labelnumber1" Grid.Column="0" Grid.Row="2" Visibility="Hidden">0</Label>
-        <Label Name="labelnumber2" Grid.Column="1" Grid.Row="2" Visibility="Hidden">0</Label>
-        <Label Name="labelnumber3" Grid.Column="2" Grid.Row="2" Visibility="Hidden">0</Label>
-        <Label Name="labelnumber4" Grid.Column="3" Grid.Row="2" Visibility="Hidden">0</Label>
-        <TextBox Name="toggledebug" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" Foreground="Red" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" KeyDown="Window_KeyDown">code</TextBox>
-        <TextBox Name="countdown" Grid.Row="2" Background="Transparent" FontSize="20" Foreground="White">00:00</TextBox>
-        <Label Name="scorelable" Grid.Row="2" Grid.Column="3" FontSize="20" Background="Transparent" Foreground="White">je score is 100/100</Label>
+        <WrapPanel Grid.Row="1" Grid.Column="4">
+            <Button Name="ButtonKleurRood3" Background="Red" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurRood3_Click"></Button>
+            <Button Name="ButtonKleurGeel3" Background="Yellow" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurGeel3_Click"></Button>
+            <Button Name="ButtonKleurOranje3" Background="Orange" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurOranje3_Click"></Button>
+            <Button Name="ButtonKleurWit3" Background="Beige" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurWit3_Click"></Button>
+            <Button Name="ButtonKleurGroen3" Background="Green" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurGroen3_Click"></Button>
+            <Button Name="ButtonKleurBlauw3" Background="Blue" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurBlauw3_Click"></Button>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="5">
+            <Button Name="ButtonKleurRood4" Background="Red" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurRood4_Click"></Button>
+            <Button Name="ButtonKleurGeel4" Background="Yellow" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurGeel4_Click"></Button>
+            <Button Name="ButtonKleurOranje4" Background="Orange" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurOranje4_Click"></Button>
+            <Button Name="ButtonKleurWit4" Background="Beige" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurWit4_Click"></Button>
+            <Button Name="ButtonKleurGroen4" Background="Green" Width="100" Height="40" Margin="20,5,5,5" Click="ButtonKleurGroen4_Click"></Button>
+            <Button Name="ButtonKleurBlauw4" Background="Blue" Width="100" Height="40" Margin="5,5,5,5" Click="ButtonKleurBlauw4_Click"></Button>
+        </WrapPanel>
+        <Label Name="randomkleur1" Grid.Column="0" Grid.Row="1" Visibility="Hidden" Grid.ColumnSpan="3" Margin="0,146,0,3" Grid.RowSpan="2">randomkleur1</Label>
+        <Label Name="randomkleur2" Grid.Column="3" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">randomkleur2</Label>
+        <Label Name="randomkleur3" Grid.Column="4" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">randomkleur3</Label>
+        <Label Name="randomkleur4" Grid.Column="5" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">randomkleur4</Label>
+        <Label Name="labelnumber1" Grid.Column="0" Grid.Row="1" Visibility="Hidden" Grid.ColumnSpan="3" Margin="0,146,0,3" Grid.RowSpan="2">0</Label>
+        <Label Name="labelnumber2" Grid.Column="3" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">0</Label>
+        <Label Name="labelnumber3" Grid.Column="4" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">0</Label>
+        <Label Name="labelnumber4" Grid.Column="5" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">0</Label>
+        <TextBox Name="toggledebug" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Background="Transparent" Foreground="Red" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" KeyDown="Window_KeyDown" Height="29" Width="50">code</TextBox>
+        <TextBox Name="countdown" Grid.Row="1" BorderThickness="0" Background="Transparent" FontSize="20" Foreground="White" Grid.ColumnSpan="3" Margin="0,146,0,3" Grid.RowSpan="2">00:00</TextBox>
+        <Label Name="scorelable" Grid.Row="1" Grid.Column="5" FontSize="20" Background="Transparent" Foreground="White" Margin="0,146,0,3" Grid.RowSpan="2">je score is 100/100</Label>
     </Grid>
 </Window>
