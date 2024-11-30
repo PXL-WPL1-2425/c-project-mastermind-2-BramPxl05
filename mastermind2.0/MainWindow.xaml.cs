@@ -233,151 +233,6 @@ namespace mastermind2._0
                     return Brushes.Black;
             }
         }
-
-        private void ButtonKleurRood1_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak1.Background = Brushes.Red.Clone();
-            kleurvlak1.Content = "rood";
-        }
-
-        private void ButtonKleurGeel1_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak1.Background = Brushes.Yellow;
-            kleurvlak1.Content = "geel";
-        }
-
-        private void ButtonKleurOranje1_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak1.Background = Brushes.Orange.Clone();
-            kleurvlak1.Content = "oranje";
-        }
-
-        private void ButtonKleurWit1_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak1.Background = Brushes.Beige.Clone();
-            kleurvlak1.Content = "wit";
-        }
-
-        private void ButtonKleurGroen1_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak1.Background = Brushes.Green.Clone();
-            kleurvlak1.Content = "groen";
-        }
-
-        private void ButtonKleurBlauw1_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak1.Background = Brushes.Blue.Clone();
-            kleurvlak1.Content = "blauw";
-        }
-
-        private void ButtonKleurRood2_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak2.Background = Brushes.Red.Clone();
-            kleurvlak2.Content = "rood";
-        }
-
-        private void ButtonKleurgeel2_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak2.Background = Brushes.Yellow.Clone();
-            kleurvlak2.Content = "geel";
-        }
-
-        private void ButtonKleurOranje2_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak2.Background = Brushes.Orange.Clone();
-            kleurvlak2.Content = "oranje";
-        }
-
-        private void ButtonKleurWit2_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak2.Background = Brushes.Beige.Clone();
-            kleurvlak2.Content = "wit";
-        }
-
-        private void ButtonKleurGroen2_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak2.Background = Brushes.Green.Clone();
-            kleurvlak2.Content = "groen";
-        }
-
-        private void ButtonKleurBlauw2_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak2.Background = Brushes.Blue.Clone();
-            kleurvlak2.Content = "blauw";
-        }
-
-        private void ButtonKleurRood3_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak3.Background = Brushes.Red.Clone();
-            kleurvlak3.Content = "rood";
-        }
-
-        private void ButtonKleurGeel3_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak3.Background = Brushes.Yellow.Clone();
-            kleurvlak3.Content = "geel";
-        }
-
-        private void ButtonKleurOranje3_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak3.Background = Brushes.Orange.Clone();
-            kleurvlak3.Content = "oranje";
-        }
-
-        private void ButtonKleurWit3_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak3.Background = Brushes.Beige.Clone();
-            kleurvlak3.Content = "wit";
-        }
-
-        private void ButtonKleurGroen3_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak3.Background = Brushes.Green.Clone();
-            kleurvlak3.Content = "groen";
-        }
-
-        private void ButtonKleurBlauw3_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak3.Background = Brushes.Blue.Clone();
-            kleurvlak3.Content = "blauw";
-        }
-
-        private void ButtonKleurRood4_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak4.Background = Brushes.Red.Clone();
-            kleurvlak4.Content = "rood";
-        }
-
-        private void ButtonKleurGeel4_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak4.Background = Brushes.Yellow.Clone();
-            kleurvlak4.Content = "geel";
-        }
-
-        private void ButtonKleurOranje4_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak4.Background = Brushes.Orange.Clone();
-            kleurvlak4.Content = "oranje";
-        }
-
-        private void ButtonKleurWit4_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak4.Background = Brushes.Beige.Clone();
-            kleurvlak4.Content = "wit";
-        }
-
-        private void ButtonKleurGroen4_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak4.Background = Brushes.Green.Clone();
-            kleurvlak4.Content = "groen";
-        }
-
-        private void ButtonKleurBlauw4_Click(object sender, RoutedEventArgs e)
-        {
-            kleurvlak4.Background = Brushes.Blue.Clone();
-            kleurvlak4.Content = "blauw";
-        }
-
         private void CheckCodeButton_Click(object sender, RoutedEventArgs e)
         {
             string mijnkleur1 = kleurvlak1.ToString();
@@ -388,6 +243,10 @@ namespace mastermind2._0
             string randomkleurkeuze2 = randomkleur2.ToString();
             string randomkleurkeuze3 = randomkleur3.ToString();
             string randomkleurkeuze4 = randomkleur4.ToString();
+            Brush voorigekeuze1Background = kleurvlak1.Background; 
+            Brush voorigekeuze2Background = kleurvlak2.Background; 
+            Brush voorigekeuze3Background = kleurvlak3.Background; 
+            Brush voorigekeuze4Background = kleurvlak4.Background; 
 
             winner = 0;
 
@@ -413,11 +272,9 @@ namespace mastermind2._0
             }
             else
             {
+                kleurvlak1.BorderBrush = Brushes.Transparent;
                 score = score - 2;
             }
-           
-
-
 
             if (mijnkleur2 == randomkleurkeuze2)
             {
@@ -441,11 +298,9 @@ namespace mastermind2._0
             }
             else
             {
+                kleurvlak2.BorderBrush = Brushes.Transparent;
                 score = score - 2;
             }
-
-
-
 
             if (mijnkleur3 == randomkleurkeuze3)
             {
@@ -469,10 +324,9 @@ namespace mastermind2._0
             }
             else
             {
+                kleurvlak3.BorderBrush = Brushes.Transparent;
                 score = score - 2;
             }
-
-
 
             if (mijnkleur4 == randomkleurkeuze4)
             {
@@ -496,9 +350,14 @@ namespace mastermind2._0
             }
             else
             {
+                kleurvlak4.BorderBrush = Brushes.Transparent;
                 score = score - 2;
             }
 
+            Brush voorigekeuze1border = kleurvlak1.BorderBrush;
+            Brush voorigekeuze2border = kleurvlak2.BorderBrush;
+            Brush voorigekeuze3border = kleurvlak3.BorderBrush;
+            Brush voorigekeuze4border = kleurvlak4.BorderBrush;
 
             attempts++;
             this.Title = $"poging {attempts}";
@@ -509,25 +368,7 @@ namespace mastermind2._0
                 MessageBoxResult result = MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nnog eens proberen?\nscore: {score}/100", "LOSER", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    score = 100;
-                    attempts = 0;
-                    kleurvlak1.BorderBrush = Brushes.Transparent;
-                    kleurvlak2.BorderBrush = Brushes.Transparent;
-                    kleurvlak3.BorderBrush = Brushes.Transparent;
-                    kleurvlak4.BorderBrush = Brushes.Transparent;
-                    kleurvlak1.Background = Brushes.Transparent;
-                    kleurvlak2.Background = Brushes.Transparent;
-                    kleurvlak3.Background = Brushes.Transparent;
-                    kleurvlak4.Background = Brushes.Transparent;
-                    kleurvlak1.Content = "";
-                    kleurvlak2.Content = "";
-                    kleurvlak3.Content = "";
-                    kleurvlak4.Content = "";
-                    kiesrandomkleur();
-                    gues1corect = 0;
-                    gues2corect = 0;
-                    gues3corect = 0;
-                    gues4corect = 0;
+                    reset();
                 }
                 else if (result == MessageBoxResult.No)
                 {
@@ -535,9 +376,18 @@ namespace mastermind2._0
                 }
             }
             
-
-            
-           
+            lastcheck1.Background = voorigekeuze1Background;
+            lastcheck2.Background = voorigekeuze2Background;
+            lastcheck3.Background = voorigekeuze3Background;
+            lastcheck4.Background = voorigekeuze4Background;
+            lastcheck1.BorderBrush = voorigekeuze1border;
+            lastcheck2.BorderBrush = voorigekeuze2border;
+            lastcheck3.BorderBrush = voorigekeuze3border;
+            lastcheck4.BorderBrush = voorigekeuze4border;
+            lastcheck1.Content = kleurvlak1.Content;
+            lastcheck2.Content = kleurvlak2.Content;
+            lastcheck3.Content = kleurvlak3.Content;
+            lastcheck4.Content = kleurvlak4.Content;
 
             startedGuestime = DateTime.Now;
 
@@ -551,25 +401,7 @@ namespace mastermind2._0
                 MessageBoxResult result = MessageBox.Show($"code is gekraakt in {attempts} poggingen. wil je nog eens?", "WINNER", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    score = 100;
-                    attempts = 0;
-                    kleurvlak1.BorderBrush = Brushes.Transparent;
-                    kleurvlak2.BorderBrush = Brushes.Transparent;
-                    kleurvlak3.BorderBrush = Brushes.Transparent;
-                    kleurvlak4.BorderBrush = Brushes.Transparent;
-                    kleurvlak1.Background = Brushes.Transparent;
-                    kleurvlak2.Background = Brushes.Transparent;
-                    kleurvlak3.Background = Brushes.Transparent;
-                    kleurvlak4.Background = Brushes.Transparent;
-                    kleurvlak1.Content = "";
-                    kleurvlak2.Content = "";
-                    kleurvlak3.Content = "";
-                    kleurvlak4.Content = "";
-                    kiesrandomkleur();
-                    gues1corect = 0;
-                    gues2corect = 0;
-                    gues3corect = 0;
-                    gues4corect = 0;
+                    reset();
                 }
                 else if (result == MessageBoxResult.No)
                 {
@@ -581,6 +413,30 @@ namespace mastermind2._0
 
 
 
+        }
+
+        private void reset()
+        {
+            score = 100;
+            attempts = 0;
+            kleurvlak1.BorderBrush = Brushes.Transparent;
+            kleurvlak2.BorderBrush = Brushes.Transparent;
+            kleurvlak3.BorderBrush = Brushes.Transparent;
+            kleurvlak4.BorderBrush = Brushes.Transparent;
+            kleurvlak1.Background = Brushes.Transparent;
+            kleurvlak2.Background = Brushes.Transparent;
+            kleurvlak3.Background = Brushes.Transparent;
+            kleurvlak4.Background = Brushes.Transparent;
+            kleurvlak1.Content = "";
+            kleurvlak2.Content = "";
+            kleurvlak3.Content = "";
+            kleurvlak4.Content = "";
+            kiesrandomkleur();
+            gues1corect = 0;
+            gues2corect = 0;
+            gues3corect = 0;
+            gues4corect = 0;
+            scorelable.Content = ($"je score is {score}/100");
         }
 
         //private void toggledebug_KeyDown(object sender, KeyEventArgs e)
@@ -617,5 +473,138 @@ namespace mastermind2._0
                 toggledebug.Visibility = Visibility.Hidden;
             }
         }
+
+        private void kleurvlak1_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                currencollorindex++;
+                currencolornameindex++;
+            }
+            else
+            {
+                currencollorindex--;
+                currencolornameindex--;
+            }
+
+            if (currencollorindex >= colors.Length)
+            {
+                currencollorindex = 0; 
+                currencolornameindex = 0;
+            }
+            else if (currencollorindex < 0)
+            {
+                currencollorindex = colors.Length - 1;
+                currencolornameindex = namecolors.Length - 1;
+            }
+
+            kleurvlak1.Background = colors[currencollorindex];
+            kleurvlak1.Content = namecolors[currencolornameindex];
+        }
+        private int currencollorindex = 0;
+        private readonly Brush[] colors = new Brush[]
+        {
+            Brushes.Red,
+            Brushes.Yellow,
+            Brushes.Orange,
+            Brushes.Beige,
+            Brushes.Green,
+            Brushes.Blue
+        };
+        private int currencolornameindex = 0;
+        private readonly string[] namecolors = new string[]
+        {
+            "rood",
+            "geel",
+            "oranje",
+            "wit",
+            "groen",
+            "blauw"
+        };
+
+        private void kleurvlak2_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                currencollorindex++;
+                currencolornameindex++;
+            }
+            else
+            {
+                currencollorindex--;
+                currencolornameindex--;
+            }
+
+            if (currencollorindex >= colors.Length)
+            {
+                currencollorindex = 0;
+                currencolornameindex = 0;
+            }
+            else if (currencollorindex < 0)
+            {
+                currencollorindex = colors.Length - 1;
+                currencolornameindex = namecolors.Length - 1;
+            }
+
+            kleurvlak2.Background = colors[currencollorindex];
+            kleurvlak2.Content = namecolors[currencolornameindex];
+        }
+
+        private void kleurvlak3_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                currencollorindex++;
+                currencolornameindex++;
+            }
+            else
+            {
+                currencollorindex--;
+                currencolornameindex--;
+            }
+
+            if (currencollorindex >= colors.Length)
+            {
+                currencollorindex = 0;
+                currencolornameindex = 0;
+            }
+            else if (currencollorindex < 0)
+            {
+                currencollorindex = colors.Length - 1;
+                currencolornameindex = namecolors.Length - 1;
+            }
+
+            kleurvlak3.Background = colors[currencollorindex];
+            kleurvlak3.Content = namecolors[currencolornameindex];
+        }
+
+        private void kleurvlak4_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                currencollorindex++;
+                currencolornameindex++;
+            }
+            else
+            {
+                currencollorindex--;
+                currencolornameindex--;
+            }
+
+            if (currencollorindex >= colors.Length)
+            {
+                currencollorindex = 0;
+                currencolornameindex = 0;
+            }
+            else if (currencollorindex < 0)
+            {
+                currencollorindex = colors.Length - 1;
+                currencolornameindex = namecolors.Length - 1;
+            }
+
+            kleurvlak4.Background = colors[currencollorindex];
+            kleurvlak4.Content = namecolors[currencolornameindex];
+        }
+
     } 
 } 
