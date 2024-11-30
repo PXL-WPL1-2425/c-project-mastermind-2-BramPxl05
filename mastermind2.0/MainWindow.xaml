@@ -42,6 +42,6 @@
         <Label Name="lastcheck3" FontSize="20" Background="Red" Grid.Row="2" Grid.Column="2" BorderBrush="White" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
         <Label Name="lastcheck4" FontSize="20" Background="Red" Grid.Row="2" Grid.Column="3" BorderBrush="White" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
         <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Foreground="White" FontSize="20" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="0,0,0,0">laaste code keuze:</Label>
-        <Image Source="/mastermind_game_logo.bmp" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" Stretch="Fill"/>
+        <Image Source="/mastermind_game_logo.bmp" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" Stretch="Fill"/> 
     </Grid>
 </Window>
