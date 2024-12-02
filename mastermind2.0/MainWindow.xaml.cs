@@ -59,6 +59,29 @@ namespace mastermind2._0
 
             allhidden();
 
+            gamemenu();
+
+
+            //int aantalpogingen = pogingentexbox.
+
+            startgame();
+
+
+            kiesrandomkleur();
+
+            this.Title = $"poging {attempts}";
+
+            countdowntime = startedGuestime;
+            countdown.Text = $"{countdowntime.Second.ToString()}";
+
+
+
+
+
+        }
+
+        private void gamemenu()
+        {
             MessageBoxResult result = MessageBox.Show("nieuw spel = ja\nhighscores = nee\nafsluiten = cancel", "menu", MessageBoxButton.YesNoCancel);
             if (result == MessageBoxResult.Yes)
             {
@@ -73,25 +96,11 @@ namespace mastermind2._0
             {
                 this.Close();
             }
-           
-          
-           
-            //int aantalpogingen = pogingentexbox.
+        }
 
-
-
-
-            kiesrandomkleur();
-
-            this.Title = $"poging {attempts}";
-
-            countdowntime = startedGuestime;
-            countdown.Text = $"{countdowntime.Second.ToString()}";
-
-
-
-
-
+        private void startgame()
+        {
+            
         }
 
         private void allvissible()
@@ -446,15 +455,12 @@ namespace mastermind2._0
             if (attempts > 10)
             {
                 attempts--;
-                MessageBoxResult result = MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nnog eens proberen?\nscore: {score}/100", "LOSER", MessageBoxButton.YesNo);
-                if (result == MessageBoxResult.Yes)
+                MessageBoxResult result = MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nscore: {score}/100", "LOSER", MessageBoxButton.OK);
+                if (result == MessageBoxResult.OK)
                 {
-                    reset();
+                    gamemenu();
                 }
-                else if (result == MessageBoxResult.No)
-                {
-                    this.Close();
-                }
+                
             }
             
             lastcheck1.Background = voorigekeuze1Background;
@@ -479,15 +485,12 @@ namespace mastermind2._0
             if(winner == 4)
             {
                 attempts--;
-                MessageBoxResult result = MessageBox.Show($"code is gekraakt in {attempts} poggingen. wil je nog eens?", "WINNER", MessageBoxButton.YesNo);
-                if (result == MessageBoxResult.Yes)
+                MessageBoxResult result = MessageBox.Show($"code is gekraakt in {attempts} poggingen.", "WINNER", MessageBoxButton.OK);
+                if (result == MessageBoxResult.OK)
                 {
-                    reset();
+                    gamemenu();
                 }
-                else if (result == MessageBoxResult.No)
-                {
-                    this.Close();
-                }
+               
             }
            
 
@@ -495,6 +498,8 @@ namespace mastermind2._0
 
 
         }
+
+      
 
         private void reset()
         {
@@ -517,7 +522,7 @@ namespace mastermind2._0
             gues2corect = 0;
             gues3corect = 0;
             gues4corect = 0;
-            scorelable.Content = ($"je score is {score}/100");
+            scorelable.Content = ("je score is 100/100");
         }
 
         //private void toggledebug_KeyDown(object sender, KeyEventArgs e)
