@@ -33,6 +33,8 @@ namespace mastermind2._0
         int gues3corect = 0;
         int gues4corect = 0;
         int winner = 0;
+        string aantalpoggingentext = "";
+        int aantalpoggingen = 0;
 
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -55,13 +57,92 @@ namespace mastermind2._0
             InitializeComponent();
             InitializeComponent();
 
+            allhidden();
+
+            MessageBoxResult result = MessageBox.Show("nieuw spel = ja\nhighscores = nee\nafsluiten = cancel", "menu", MessageBoxButton.YesNoCancel);
+            if (result == MessageBoxResult.Yes)
+            {
+                reset();
+                //allvissible();
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                highscoresmessagebox();
+            }
+            else if (result == MessageBoxResult.Cancel)
+            {
+                this.Close();
+            }
+           
+          
+           
+            //int aantalpogingen = pogingentexbox.
+
+
+
+
             kiesrandomkleur();
 
             this.Title = $"poging {attempts}";
 
             countdowntime = startedGuestime;
             countdown.Text = $"{countdowntime.Second.ToString()}";
+
+
+
+
+
         }
+
+        private void allvissible()
+        {
+            kleurvlak1.Visibility = Visibility.Visible;
+            kleurvlak2.Visibility = Visibility.Visible;
+            kleurvlak3.Visibility = Visibility.Visible;
+            kleurvlak4.Visibility = Visibility.Visible;
+            countdown.Visibility = Visibility.Visible;
+            scorelable.Visibility = Visibility.Visible;
+            lastcheck1.Visibility = Visibility.Visible;
+            lastcheck2.Visibility = Visibility.Visible;
+            lastcheck3.Visibility = Visibility.Visible;
+            lastcheck4.Visibility = Visibility.Visible;
+            image.Visibility = Visibility.Visible;
+            CheckCodeButton.Visibility = Visibility.Visible;
+            kiespogingenlable.Visibility = Visibility.Hidden;
+            stelpoggingenvastbutton.Visibility = Visibility.Hidden;
+            pogingentexbox.Visibility = Visibility.Hidden;
+            girdpogingenkiezen.Visibility = Visibility.Hidden;
+
+        }
+
+        private void allhidden()
+        {
+            kleurvlak1.Visibility = Visibility.Hidden;
+            kleurvlak2.Visibility = Visibility.Hidden;
+            kleurvlak3.Visibility = Visibility.Hidden;
+            kleurvlak4.Visibility = Visibility.Hidden;
+            countdown.Visibility = Visibility.Hidden;
+            scorelable.Visibility = Visibility.Hidden;
+            lastcheck1.Visibility = Visibility.Hidden;
+            lastcheck2.Visibility = Visibility.Hidden;
+            lastcheck3.Visibility = Visibility.Hidden;
+            lastcheck4.Visibility = Visibility.Hidden;
+            image.Visibility = Visibility.Hidden;
+            CheckCodeButton.Visibility = Visibility.Hidden;
+        }
+
+        private void highscoresmessagebox()
+        {
+            MessageBox.Show($"", "highscores", MessageBoxButton.OK);
+        }
+        //private readonly string[] allhighscores = new string[]
+        //{
+        //    "lol"
+        //};
+        //private object highscores()
+        //{
+        //    string lol = "lol";
+        //}
 
         private void kiesrandomkleur()
         {
@@ -606,5 +687,9 @@ namespace mastermind2._0
             kleurvlak4.Content = namecolors[currencolornameindex];
         }
 
+        private void stelpoggingenvastbutton_Click(object sender, RoutedEventArgs e)
+        {
+            allvissible();
+        }
     } 
 } 

@@ -20,11 +20,16 @@
             <RowDefinition Height="120*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" Name="CheckCodeButton" Content="check code" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="42" FontSize="20" Click="CheckCodeButton_Click"/>
-        <Label BorderBrush="Gray" BorderThickness="15" Name="kleurvlak1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="0" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak1_MouseWheel"/>
-        <Label BorderBrush="Gray" BorderThickness="15" Name="kleurvlak4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="3" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak4_MouseWheel"/>
-        <Label BorderBrush="Gray" BorderThickness="15" Name="kleurvlak3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="2" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak3_MouseWheel"/>
-        <Label BorderBrush="Gray" BorderThickness="15" Name="kleurvlak2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="1" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak2_MouseWheel"/>
+        <Grid Visibility="Visible" Background="White" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="4" Name="girdpogingenkiezen">
+            <Label Name="kiespogingenlable" FontSize="20" Width="500" Height="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,300">kies je aantaal pogingen:</Label>
+            <TextBox Name="pogingentexbox" Width="500" Height="70" Margin="0,0,0,150" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+            <Button x:Name ="stelpoggingenvastbutton" Height="57" Width="304" Content="stel aantal vast en begin" FontSize="20" Margin="0,0,0,0" Click="stelpoggingenvastbutton_Click"/>
+        </Grid>
+        <Button Visibility="Visible" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" Name="CheckCodeButton" Content="check code" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="42" FontSize="20" Click="CheckCodeButton_Click"/>
+        <Label Visibility="Visible" BorderBrush="Gray" BorderThickness="15" Name="kleurvlak1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="0" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak1_MouseWheel"/>
+        <Label Visibility="Visible" BorderBrush="Gray" BorderThickness="15" Name="kleurvlak4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="3" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak4_MouseWheel"/>
+        <Label Visibility="Visible" BorderBrush="Gray" BorderThickness="15" Name="kleurvlak3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="2" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak3_MouseWheel"/>
+        <Label Visibility="Visible" BorderBrush="Gray" BorderThickness="15" Name="kleurvlak2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="240" Width="250" Grid.Column="1" Content=" " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60" MouseWheel="kleurvlak2_MouseWheel"/>
 
         <Label Name="randomkleur1" Grid.Column="0" Grid.Row="1" Visibility="Hidden" Grid.ColumnSpan="3" Margin="0,146,0,3" Grid.RowSpan="2">randomkleur1</Label>
         <Label Name="randomkleur2" Grid.Column="3" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">randomkleur2</Label>
@@ -35,13 +40,13 @@
         <Label Name="labelnumber3" Grid.Column="4" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">0</Label>
         <Label Name="labelnumber4" Grid.Column="5" Grid.Row="1" Visibility="Hidden" Margin="0,146,0,3" Grid.RowSpan="2">0</Label>
         <TextBox Name="toggledebug" Grid.Row="3" Grid.Column="0" Background="Transparent" Foreground="Red" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" KeyDown="Window_KeyDown" Height="29" Width="auto" Margin="0,84,0,0">code</TextBox>
-        <TextBox Name="countdown" Height="50" Grid.Row="1" BorderThickness="0" Background="Transparent" FontSize="20" Foreground="White" Grid.RowSpan="1" Grid.Column="0">00:00</TextBox>
-        <Label Name="scorelable" Grid.Row="1" Grid.Column="3" Height="50" FontSize="20" Background="Transparent" Foreground="White" Margin="0,1,0,0">je score is 100/100</Label>
-        <Label Name="lastcheck1" FontSize="20" Background="Red" Grid.Row="2" Grid.Column="0" BorderBrush="White" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
-        <Label Name="lastcheck2" FontSize="20" Background="Red" Grid.Row="2" Grid.Column="1" BorderBrush="White" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
-        <Label Name="lastcheck3" FontSize="20" Background="Red" Grid.Row="2" Grid.Column="2" BorderBrush="White" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
-        <Label Name="lastcheck4" FontSize="20" Background="Red" Grid.Row="2" Grid.Column="3" BorderBrush="White" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
-        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Foreground="White" FontSize="20" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="0,0,0,0">laaste code keuze:</Label>
-        <Image Source="/mastermind_game_logo.bmp" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" Stretch="Fill"/> 
+        <TextBox Visibility="Visible" Name="countdown" Height="50" Grid.Row="1" BorderThickness="0" Background="Transparent" FontSize="20" Foreground="White" Grid.RowSpan="1" Grid.Column="0">00:00</TextBox>
+        <Label Visibility="Visible" Name="scorelable" Grid.Row="1" Grid.Column="3" Height="50" FontSize="20" Background="Transparent" Foreground="White" Margin="0,1,0,0">je score is 100/100</Label>
+        <Label Visibility="Visible" Name="lastcheck1" FontSize="20" Background="Black" Grid.Row="2" Grid.Column="0" BorderBrush="Gray" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+        <Label Visibility="Visible" Name="lastcheck2" FontSize="20" Background="Black" Grid.Row="2" Grid.Column="1" BorderBrush="Gray" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+        <Label Visibility="Visible" Name="lastcheck3" FontSize="20" Background="Black" Grid.Row="2" Grid.Column="2" BorderBrush="Gray" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+        <Label Visibility="Visible" Name="lastcheck4" FontSize="20" Background="Black" Grid.Row="2" Grid.Column="3" BorderBrush="Gray" BorderThickness="10" Margin="30,35,30,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+        <Label Visibility="Visible" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Foreground="White" FontSize="20" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="0,0,0,0">laaste code keuze:</Label>
+        <Image Name="image" Visibility="Visible" Source="/mastermind_game_logo.bmp" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" Stretch="Fill"/>
     </Grid>
 </Window>
