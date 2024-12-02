@@ -34,7 +34,7 @@ namespace mastermind2._0
         int gues4corect = 0;
         int winner = 0;
         string aantalpoggingentext = "";
-        int aantalpoggingen = 0;
+        int aantalpoggingen = 10;
 
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -144,13 +144,27 @@ namespace mastermind2._0
         {
             MessageBox.Show($"", "highscores", MessageBoxButton.OK);
         }
-        //private readonly string[] allhighscores = new string[]
+        private readonly string[] allhighscoresarrey = new string[15]
+        {
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+            "empty highscore",
+        };
+        //private object allhigscores()
         //{
-        //    "lol"
-        //};
-        //private object highscores()
-        //{
-        //    string lol = "lol";
+        //    allhighscoresarrey[];
         //}
 
         private void kiesrandomkleur()
@@ -452,7 +466,7 @@ namespace mastermind2._0
             attempts++;
             this.Title = $"poging {attempts}";
 
-            if (attempts > 10)
+            if (attempts > aantalpoggingen)
             {
                 attempts--;
                 MessageBoxResult result = MessageBox.Show($"you failed! De correcte code was {toggledebug.Text}.\nscore: {score}/100", "LOSER", MessageBoxButton.OK);
